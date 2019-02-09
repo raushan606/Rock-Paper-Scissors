@@ -116,6 +116,12 @@ header>h1{
     border-radius: 40%;
 }
 
+footer {
+    text-align: right;
+    vertical-align: bottom;
+    color: aliceblue;
+}
+
 .green-glow {
     border: 4px solid #4dcc7d;
     box-shadow: 0 0 10px #31b43a;
