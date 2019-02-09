@@ -22,27 +22,37 @@ function convertToWord(letter) {
 }
 
 function win(userChoice, computerChoice){
+    const userChoice_div = document.getElementById(userChoice);
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    
     result_p.innerHTML = convertToWord(userChoice)+"(user)" +" beats "+ convertToWord(computerChoice)+ "(computer)" + ". You win! 🔥";
+    userChoice_div.classList.add('green-glow');
+    setTimeout(function() { userChoice_div.classList.remove('green-glow')}, 3000)
 }
 
+
+
 function lose(userChoice, computerChoice){
+    const userChoice_div = document.getElementById(userChoice);
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    
     result_p.innerHTML = convertToWord(userChoice)+"(user)" +" loses "+ convertToWord(computerChoice)+ "(computer)" + ". You Lost! 💩";
+    userChoice_div.classList.add('red-glow');
+    setTimeout(function() { userChoice_div.classList.remove('red-glow')}, 3000)
+
 
 }
 
 function draw(userChoice, computerChoice){
+    const userChoice_div = document.getElementById(userChoice);
    /* userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
     */
     result_p.innerHTML = convertToWord(userChoice)+"(user)" +" equals "+ convertToWord(computerChoice)+ "(computer)" + ". It's Draw! 🍎";
+    userChoice_div.classList.add('gray-glow');
+    setTimeout(function() { userChoice_div.classList.remove('gray-glow')}, 3000)
 
 }
 
