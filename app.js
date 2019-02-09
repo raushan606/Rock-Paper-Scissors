@@ -14,19 +14,36 @@ function getComputerChoice() {
     return choices[randomNumber];
 }
 
+function convertToWord(letter) {
+    if (letter == "r" ) return "Rock";
+    if (letter == "p") return "Paper";
+    return "Scissors";
+    
+}
+
 function win(userChoice, computerChoice){
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = userChoice + " beats "+ computerChoice + ". You win!";
+    
+    result_p.innerHTML = convertToWord(userChoice)+"(user)" +" beats "+ convertToWord(computerChoice)+ "(computer)" + ". You win! 🔥";
 }
 
-function lose(){
+function lose(userChoice, computerChoice){
+    computerScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
     
+    result_p.innerHTML = convertToWord(userChoice)+"(user)" +" loses "+ convertToWord(computerChoice)+ "(computer)" + ". You Lost! 💩";
+
 }
 
-function draw(){
-    
+function draw(userChoice, computerChoice){
+   /* userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+    */
+    result_p.innerHTML = convertToWord(userChoice)+"(user)" +" equals "+ convertToWord(computerChoice)+ "(computer)" + ". It's Draw! 🍎";
+
 }
 
 
